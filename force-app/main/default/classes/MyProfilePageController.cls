@@ -13,4 +13,10 @@ public with sharing class MyProfilePageController {
         this.isEdit = !this.isEdit;
         return null;
     }
+
+    // Method referenced by Visualforce page to save profile changes
+    public PageReference save() {
+        // Minimal stub: implement save logic in real controller
+        return null;
+    }
 }

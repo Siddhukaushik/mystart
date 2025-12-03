@@ -9,4 +9,9 @@ public with sharing class ForgotPasswordController {
         // Minimal stub: implement password reset flow in real controller
         return null;
     }
+
+    // Method referenced by Visualforce pages
+    public PageReference forgotPassword() {
+        return sendReset();
+    }
 }
