@@ -1,6 +1,8 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, api } from 'lwc';
 
 export default class GameList extends LightningElement {
+    @api title = 'Available Games';
+    
     @track games = [
         {
             id: '1',
