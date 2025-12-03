@@ -1,72 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>65.0</apiVersion>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>force:richText</componentName>
-                <componentProperties>
-                    <name>richTextValue</name>
-                    <value>&lt;h1&gt;SRI VENKATA SAI SWAGRUHA FOODS&lt;/h1&gt;&lt;p&gt;Sweets, Shops, Customers, Items&lt;/p&gt;</value>
-                </componentProperties>
+                <componentName>runtime_sales_activities:todayTaskContainer</componentName>
             </componentInstance>
         </itemInstances>
-        <name>header</name>
+        <name>region1</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>force:listView</componentName>
-                <componentProperties>
-                    <name>listViewApiName</name>
-                    <value>AllAccounts</value>
-                </componentProperties>
-                <componentProperties>
-                    <name>objectApiName</name>
-                    <value>Account</value>
-                </componentProperties>
-            </componentInstance>
-            <componentInstance>
-                <componentName>force:listView</componentName>
-                <componentProperties>
-                    <name>listViewApiName</name>
-                    <value>AllContacts</value>
-                </componentProperties>
-                <componentProperties>
-                    <name>objectApiName</name>
-                    <value>Contact</value>
-                </componentProperties>
-            </componentInstance>
-            <componentInstance>
-                <componentName>force:listView</componentName>
-                <componentProperties>
-                    <name>listViewApiName</name>
-                    <value>AllProducts</value>
-                </componentProperties>
-                <componentProperties>
-                    <name>objectApiName</name>
-                    <value>Product2</value>
-                </componentProperties>
+                <componentName>home:heroChart</componentName>
             </componentInstance>
         </itemInstances>
-        <name>main</name>
+        <name>region2</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>force:recentItems</componentName>
-                <componentProperties>
-                    <name>numItems</name>
-                    <value>10</value>
-                </componentProperties>
+                <componentName>home:recentRecordContainer</componentName>
             </componentInstance>
         </itemInstances>
-        <name>sidebar</name>
+        <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>SRI VENKATA SAI SWAGRUHA FOODS</masterLabel>
-    <template>flexipage:defaultAppHomeTemplate</template>
-    <type>AppPage</type>
+    <template>home:desktopTemplate</template>
+    <type>HomePage</type>
 </FlexiPage>
