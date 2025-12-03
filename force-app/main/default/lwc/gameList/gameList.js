@@ -1,9 +1,44 @@
 import { LightningElement, track, api } from 'lwc';
+import { NavigationMixin } from 'lightning/navigation';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import launchGame from '@salesforce/apex/GameController.launchGame';
+import Id from '@salesforce/user/Id';
 
-export default class GameList extends LightningElement {
+export default class GameList extends NavigationMixin(LightningElement) {
     @api title = 'Available Games';
+    userId = Id;
     
     @track games = [
+        {
+            id: 'call-of-duty',
+            name: 'Call of Duty',
+            description: 'Intense first-person shooter with tactical gameplay',
+            category: 'Shooter',
+            players: 15420,
+            rating: 4.8,
+            imageUrl: 'https://via.placeholder.com/300x200/1a1a1a/00FF00?text=Call+of+Duty',
+            difficulty: 'Hard'
+        },
+        {
+            id: 'pubg',
+            name: 'PUBG: Battlegrounds',
+            description: 'Battle royale survival shooter with 100 players',
+            category: 'Shooter',
+            players: 12850,
+            rating: 4.6,
+            imageUrl: 'https://via.placeholder.com/300x200/F77F00/ffffff?text=PUBG',
+            difficulty: 'Hard'
+        },
+        {
+            id: 'fortnite',
+            name: 'Fortnite',
+            description: 'Build, battle, and be the last one standing',
+            category: 'Shooter',
+            players: 18965,
+            rating: 4.9,
+            imageUrl: 'https://via.placeholder.com/300x200/9146FF/ffffff?text=Fortnite',
+            difficulty: 'Medium'
+        },
         {
             id: '1',
             name: 'Chess Master',
@@ -72,6 +107,7 @@ export default class GameList extends LightningElement {
     get categoryOptions() {
         return [
             { label: 'All Categories', value: 'All' },
+            { label: 'Shooter', value: 'Shooter' },
             { label: 'Strategy', value: 'Strategy' },
             { label: 'Puzzle', value: 'Puzzle' },
             { label: 'Racing', value: 'Racing' },
@@ -109,19 +145,48 @@ export default class GameList extends LightningElement {
         this.searchTerm = event.target.value;
     }
 
-    handlePlayGame(event) {
+    async handlePlayGame(event) {
         const gameId = event.currentTarget.dataset.id;
         const gameName = event.currentTarget.dataset.name;
         
-        // Dispatch custom event to parent component
-        this.dispatchEvent(new CustomEvent('playgame', {
-            detail: { gameId, gameName },
-            bubbles: true,
-            composed: true
-        }));
-
-        // Show toast notification
-        this.showToast('Game Launched', `Starting ${gameName}...`, 'success');
+        try {
+            // Call Apex controller to launch game and log play event
+            const navigationUrl = await launchGame({ 
+                gameId: gameId, 
+                playerId: this.userId 
+            });
+            
+            // Show success toast
+            this.showToast('Game Launched', `Starting ${gameName}...`, 'success');
+            
+            // Navigate to game using NavigationMixin
+            this[NavigationMixin.Navigate]({
+                type: 'standard__webPage',
+                attributes: {
+                    url: navigationUrl
+                }
+            });
+            
+            // Dispatch custom event to parent component
+            this.dispatchEvent(new CustomEvent('playgame', {
+                detail: { 
+                    gameId, 
+                    gameName,
+                    navigationUrl 
+                },
+                bubbles: true,
+                composed: true
+            }));
+            
+        } catch (error) {
+            // Show error toast
+            this.showToast(
+                'Error', 
+                error.body?.message || 'Failed to launch game. Please try again.', 
+                'error'
+            );
+            console.error('Error launching game:', error);
+        }
     }
 
     handleViewDetails(event) {

@@ -1,63 +1,100 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api, track, wire } from 'lwc';
+import getPlayerStats from '@salesforce/apex/GameController.getPlayerStats';
+import Id from '@salesforce/user/Id';
 
 export default class GameStats extends LightningElement {
     @api playerId;
     @api playerName = 'Current Player';
-
-    @track stats = {
-        totalGames: 156,
-        wins: 124,
-        losses: 32,
-        winRate: 79.5,
-        currentStreak: 8,
-        bestStreak: 15,
-        totalScore: 98750,
-        level: 42,
-        nextLevelPoints: 1250,
-        achievements: 24,
-        totalAchievements: 50,
-        hoursPlayed: 87,
-        favoriteGame: 'Chess Master',
-        rank: 15,
-        totalPlayers: 5000
-    };
+    @api gameId = 'call-of-duty'; // Default to Call of Duty
+    
+    userId = Id;
+    
+    @track stats = {};
+    @track isLoading = true;
+    @track error;
 
     @track recentGames = [
-        { id: 1, name: 'Chess Master', result: 'Win', score: 1250, date: '2024-12-01' },
-        { id: 2, name: 'Puzzle Quest', result: 'Win', score: 980, date: '2024-11-30' },
-        { id: 3, name: 'Speed Racer', result: 'Loss', score: 450, date: '2024-11-29' },
-        { id: 4, name: 'Word Wizard', result: 'Win', score: 1100, date: '2024-11-28' },
-        { id: 5, name: 'Trivia Champion', result: 'Win', score: 1350, date: '2024-11-27' }
+        { id: 1, name: 'Call of Duty', result: 'Win', score: 2450, date: '2024-12-02' },
+        { id: 2, name: 'PUBG', result: 'Win', score: 1980, date: '2024-12-01' },
+        { id: 3, name: 'Fortnite', result: 'Win', score: 3250, date: '2024-11-30' },
+        { id: 4, name: 'Call of Duty', result: 'Loss', score: 1100, date: '2024-11-29' },
+        { id: 5, name: 'PUBG', result: 'Win', score: 2150, date: '2024-11-28' }
     ];
 
     @track achievements = [
-        { id: 1, name: 'First Victory', icon: 'utility:trophy', earned: true, date: '2024-01-15' },
-        { id: 2, name: 'Win Streak 5', icon: 'utility:ribbon', earned: true, date: '2024-03-20' },
-        { id: 3, name: 'Win Streak 10', icon: 'utility:ribbon', earned: true, date: '2024-06-10' },
-        { id: 4, name: 'Score Master', icon: 'utility:success', earned: true, date: '2024-08-05' },
-        { id: 5, name: 'Win Streak 15', icon: 'utility:ribbon', earned: false, date: null },
-        { id: 6, name: 'Tournament Winner', icon: 'utility:trophy', earned: false, date: null }
+        { id: 1, name: 'First Blood', icon: 'utility:trophy', earned: true, date: '2024-01-15' },
+        { id: 2, name: 'Headshot Master', icon: 'utility:ribbon', earned: true, date: '2024-03-20' },
+        { id: 3, name: 'Kill Streak 10', icon: 'utility:ribbon', earned: true, date: '2024-06-10' },
+        { id: 4, name: 'Sniper Elite', icon: 'utility:success', earned: true, date: '2024-08-05' },
+        { id: 5, name: 'Victory Royale 100', icon: 'utility:ribbon', earned: false, date: null },
+        { id: 6, name: 'Tournament Champion', icon: 'utility:trophy', earned: false, date: null }
     ];
+    
+    connectedCallback() {
+        this.loadPlayerStats();
+    }
+    
+    async loadPlayerStats() {
+        try {
+            this.isLoading = true;
+            const result = await getPlayerStats({ 
+                gameId: this.gameId, 
+                playerId: this.playerId || this.userId 
+            });
+            
+            if (result) {
+                this.stats = {
+                    ...result,
+                    totalGames: result.totalMatches,
+                    winRate: result.wins && result.totalMatches ? 
+                        ((result.wins / result.totalMatches) * 100).toFixed(1) : 0,
+                    currentStreak: result.highestStreak,
+                    bestStreak: result.highestStreak,
+                    level: Math.floor(result.hoursPlayed / 10) + 1,
+                    rank: result.currentRank
+                };
+            }
+            this.error = undefined;
+        } catch (error) {
+            this.error = error;
+            console.error('Error loading player stats:', error);
+        } finally {
+            this.isLoading = false;
+        }
+    }
 
     get winRatePercentage() {
-        return this.stats.winRate;
+        return this.stats.winRate || 0;
     }
 
     get levelProgress() {
-        const progress = ((this.stats.level % 10) / 10) * 100;
+        const level = this.stats.level || 1;
+        const progress = ((level % 10) / 10) * 100;
         return Math.round(progress);
     }
 
     get achievementProgress() {
-        return Math.round((this.stats.achievements / this.stats.totalAchievements) * 100);
+        const achievements = this.stats.achievements || 0;
+        const totalAchievements = this.stats.totalAchievements || 50;
+        return Math.round((achievements / totalAchievements) * 100);
     }
 
     get topPercentile() {
-        return ((this.stats.totalPlayers - this.stats.rank) / this.stats.totalPlayers * 100).toFixed(1);
+        const totalPlayers = this.stats.totalPlayers || 10000;
+        const rank = this.stats.rank || 1000;
+        return ((totalPlayers - rank) / totalPlayers * 100).toFixed(1);
     }
 
     get nextLevel() {
-        return this.stats.level + 1;
+        return (this.stats.level || 1) + 1;
+    }
+    
+    get kdRatio() {
+        return this.stats.kdRatio ? this.stats.kdRatio.toFixed(2) : 'N/A';
+    }
+    
+    get accuracyPercent() {
+        return this.stats.accuracy ? this.stats.accuracy.toFixed(1) + '%' : 'N/A';
     }
 
     get earnedAchievements() {
@@ -69,8 +106,9 @@ export default class GameStats extends LightningElement {
     }
 
     handleRefresh() {
+        this.loadPlayerStats();
         this.dispatchEvent(new CustomEvent('refreshstats', {
-            detail: { playerId: this.playerId },
+            detail: { playerId: this.playerId || this.userId },
             bubbles: true,
             composed: true
         }));
