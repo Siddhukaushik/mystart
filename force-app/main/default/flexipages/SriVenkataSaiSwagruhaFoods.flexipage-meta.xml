@@ -3,32 +3,14 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>runtime_sales_activities:todayTaskContainer</componentName>
+                <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
-        <name>region1</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>home:heroChart</componentName>
-            </componentInstance>
-        </itemInstances>
-        <name>region2</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>home:recentRecordContainer</componentName>
-            </componentInstance>
-        </itemInstances>
-        <name>region3</name>
+        <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>SRI VENKATA SAI SWAGRUHA FOODS</masterLabel>
     <sobjectType>Account</sobjectType>
-    <template>flexipage:recordHomeSingleColTemplateDesktop</template>
+    <template>flexipage:recordHomeTemplateDesktop</template>
     <type>RecordPage</type>
 </FlexiPage>
