@@ -1,0 +1,78 @@
+<template>
+    <lightning-card title={cardTitle} icon-name="standard:reward">
+        <div slot="actions">
+            <lightning-button-icon
+                icon-name="utility:refresh"
+                alternative-text="Refresh"
+                title="Refresh Leaderboard">
+            </lightning-button-icon>
+        </div>
+        
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Top 3 Podium -->
+            <div class="podium-container slds-m-bottom_large">
+                <template for:each={topThreePlayers} for:item="player">
+                    <div key={player.playerId} class={player.podiumClass}>
+                        <div class="podium-trophy">
+                            <lightning-icon icon-name="utility:trophy" size={player.trophySize} class={player.trophyClass}></lightning-icon>
+                        </div>
+                        <div class="podium-rank">{player.rankLabel}</div>
+                        <div class="podium-avatar">
+                            <lightning-avatar
+                                fallback-icon-name="standard:user"
+                                size={player.avatarSize}>
+                            </lightning-avatar>
+                        </div>
+                        <div class="podium-name">{player.playerName}</div>
+                        <div class="podium-score">{player.score}</div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Full Leaderboard Table -->
+            <div class="leaderboard-table">
+                <lightning-datatable
+                    key-field="playerId"
+                    data={enrichedLeaderboardData}
+                    columns={columns}
+                    hide-checkbox-column
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </div>
+
+            <!-- Statistics Summary -->
+            <div class="stats-summary slds-m-top_large">
+                <div class="slds-grid slds-gutters slds-wrap">
+                    <div class="slds-col slds-size_1-of-4">
+                        <div class="stat-card">
+                            <lightning-icon icon-name="utility:groups" size="small" class="stat-icon"></lightning-icon>
+                            <div class="stat-value">10</div>
+                            <div class="stat-label">Total Players</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">
+                        <div class="stat-card">
+                            <lightning-icon icon-name="utility:chart" size="small" class="stat-icon"></lightning-icon>
+                            <div class="stat-value">1,131</div>
+                            <div class="stat-label">Total Games</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">
+                        <div class="stat-card">
+                            <lightning-icon icon-name="utility:success" size="small" class="stat-icon"></lightning-icon>
+                            <div class="stat-value">77.9%</div>
+                            <div class="stat-label">Avg Win Rate</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">
+                        <div class="stat-card">
+                            <lightning-icon icon-name="utility:ribbon" size="small" class="stat-icon"></lightning-icon>
+                            <div class="stat-value">179</div>
+                            <div class="stat-label">Achievements</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

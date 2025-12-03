@@ -1,0 +1,189 @@
+<template>
+    <lightning-card>
+        <!-- Game Header with Image -->
+        <div class="game-header">
+            <img src={gameDetails.imageUrl} alt={gameDetails.name} class="game-header-image" />
+            <div class="game-header-overlay">
+                <div class="game-actions">
+                    <lightning-button
+                        variant="brand"
+                        label={playButtonLabel}
+                        icon-name="utility:play"
+                        class="play-button-large"
+                        onclick={handlePlayGame}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Title and Quick Info -->
+        <div class="slds-p-around_medium">
+            <div class="slds-grid slds-gutters slds-wrap">
+                <div class="slds-col slds-size_1-of-1">
+                    <h1 class="game-title">{gameDetails.name}</h1>
+                    <div class="game-meta slds-m-bottom_small">
+                        <span class="meta-item">
+                            <lightning-badge label={gameDetails.category}></lightning-badge>
+                        </span>
+                        <span class="meta-item">
+                            <lightning-badge label={gameDetails.difficulty} class={gameDetails.difficulty}></lightning-badge>
+                        </span>
+                        <span class="meta-item">
+                            <lightning-icon icon-name="utility:groups" size="x-small"></lightning-icon>
+                            {gameDetails.players} players
+                        </span>
+                    </div>
+
+                    <!-- Rating -->
+                    <div class="rating-container slds-m-bottom_medium">
+                        <div class="stars">
+                            <template for:each={ratingStars} for:item="star">
+                                <lightning-icon
+                                    key={star.id}
+                                    icon-name="utility:favorite"
+                                    size="small"
+                                    class={star.type}>
+                                </lightning-icon>
+                            </template>
+                        </div>
+                        <span class="rating-text">{gameDetails.rating} ({gameDetails.totalReviews} reviews)</span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons slds-m-bottom_medium">
+                        <lightning-button
+                            variant="neutral"
+                            label={favoriteLabel}
+                            icon-name={favoriteIcon}
+                            onclick={handleToggleFavorite}
+                            class="slds-m-right_x-small">
+                        </lightning-button>
+                        <lightning-button
+                            variant="neutral"
+                            label="Share"
+                            icon-name="utility:share"
+                            onclick={handleShare}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="slds-tabs_default">
+                <ul class="slds-tabs_default__nav" role="tablist">
+                    <li class={isOverviewTab} title="Overview" role="presentation">
+                        <a class="slds-tabs_default__link" role="tab" data-tab="overview" onclick={handleTabChange}>
+                            Overview
+                        </a>
+                    </li>
+                    <li class={isReviewsTab} title="Reviews" role="presentation">
+                        <a class="slds-tabs_default__link" role="tab" data-tab="reviews" onclick={handleTabChange}>
+                            Reviews
+                        </a>
+                    </li>
+                    <li class={isUpdatesTab} title="Updates" role="presentation">
+                        <a class="slds-tabs_default__link" role="tab" data-tab="updates" onclick={handleTabChange}>
+                            Updates
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Overview Tab -->
+                <div if:true={isOverviewTab} class="slds-tabs_default__content slds-p-around_medium" role="tabpanel">
+                    <h3 class="slds-text-heading_small slds-m-bottom_small">About This Game</h3>
+                    <p class="game-description slds-m-bottom_medium">{gameDetails.description}</p>
+
+                    <div class="slds-grid slds-gutters slds-wrap">
+                        <!-- Game Info -->
+                        <div class="slds-col slds-size_1-of-2">
+                            <h4 class="slds-text-heading_small slds-m-bottom_small">Game Information</h4>
+                            <dl class="info-list">
+                                <dt>Developer:</dt>
+                                <dd>{gameDetails.developer}</dd>
+                                <dt>Release Date:</dt>
+                                <dd>{gameDetails.releaseDate}</dd>
+                                <dt>Version:</dt>
+                                <dd>{gameDetails.version}</dd>
+                                <dt>Size:</dt>
+                                <dd>{gameDetails.size}</dd>
+                            </dl>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="slds-col slds-size_1-of-2">
+                            <h4 class="slds-text-heading_small slds-m-bottom_small">Features</h4>
+                            <ul class="feature-list">
+                                <template for:each={gameDetails.features} for:item="feature">
+                                    <li key={feature}>
+                                        <lightning-icon icon-name="utility:check" size="xx-small" class="feature-check"></lightning-icon>
+                                        {feature}
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- System Requirements -->
+                    <div class="slds-m-top_medium">
+                        <h4 class="slds-text-heading_small slds-m-bottom_small">System Requirements</h4>
+                        <ul class="requirements-list">
+                            <template for:each={gameDetails.systemRequirements} for:item="req">
+                                <li key={req}>{req}</li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div if:true={isReviewsTab} class="slds-tabs_default__content slds-p-around_medium" role="tabpanel">
+                    <h3 class="slds-text-heading_small slds-m-bottom_medium">Player Reviews</h3>
+                    <div class="reviews-container">
+                        <template for:each={gameDetails.topReviews} for:item="review">
+                            <div key={review.id} class="review-card slds-m-bottom_medium">
+                                <div class="review-header">
+                                    <lightning-avatar
+                                        fallback-icon-name="standard:user"
+                                        size="medium">
+                                    </lightning-avatar>
+                                    <div class="review-user-info">
+                                        <div class="review-user-name">{review.userName}</div>
+                                        <div class="review-date">{review.date}</div>
+                                    </div>
+                                    <div class="review-rating">
+                                        {review.rating} ★
+                                    </div>
+                                </div>
+                                <p class="review-comment">{review.comment}</p>
+                                <div class="review-actions">
+                                    <lightning-button
+                                        variant="base"
+                                        label="Helpful"
+                                        icon-name="utility:like"
+                                        data-id={review.id}
+                                        onclick={handleReviewHelpful}>
+                                    </lightning-button>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Updates Tab -->
+                <div if:true={isUpdatesTab} class="slds-tabs_default__content slds-p-around_medium" role="tabpanel">
+                    <h3 class="slds-text-heading_small slds-m-bottom_medium">Recent Updates</h3>
+                    <div class="updates-container">
+                        <template for:each={gameDetails.recentUpdates} for:item="update">
+                            <div key={update.version} class="update-card slds-m-bottom_medium">
+                                <div class="update-header">
+                                    <span class="update-version">Version {update.version}</span>
+                                    <span class="update-date">{update.date}</span>
+                                </div>
+                                <p class="update-changes">{update.changes}</p>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

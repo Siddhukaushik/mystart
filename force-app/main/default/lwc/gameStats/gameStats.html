@@ -1,0 +1,168 @@
+<template>
+    <lightning-card title="Player Statistics" icon-name="standard:dashboard">
+        <div slot="actions">
+            <lightning-button-icon
+                icon-name="utility:refresh"
+                alternative-text="Refresh"
+                title="Refresh Statistics"
+                onclick={handleRefresh}>
+            </lightning-button-icon>
+        </div>
+
+        <div class="slds-card__body slds-card__body_inner">
+            <!-- Player Header -->
+            <div class="player-header slds-m-bottom_large">
+                <lightning-avatar
+                    fallback-icon-name="standard:user"
+                    size="large">
+                </lightning-avatar>
+                <div class="player-info">
+                    <h2 class="player-name">{playerName}</h2>
+                    <div class="player-level">
+                        <lightning-badge label={stats.level} icon-name="utility:level_up"></lightning-badge>
+                        <span class="level-text">Level {stats.level}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Stats Grid -->
+            <div class="stats-grid slds-m-bottom_large">
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <lightning-icon icon-name="utility:chart" size="medium" class="icon-blue"></lightning-icon>
+                    </div>
+                    <div class="stat-value">{stats.totalGames}</div>
+                    <div class="stat-label">Total Games</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <lightning-icon icon-name="utility:success" size="medium" class="icon-green"></lightning-icon>
+                    </div>
+                    <div class="stat-value">{stats.wins}</div>
+                    <div class="stat-label">Wins</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <lightning-icon icon-name="utility:close" size="medium" class="icon-red"></lightning-icon>
+                    </div>
+                    <div class="stat-value">{stats.losses}</div>
+                    <div class="stat-label">Losses</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <lightning-icon icon-name="utility:trending" size="medium" class="icon-purple"></lightning-icon>
+                    </div>
+                    <div class="stat-value">{stats.winRate}%</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+            </div>
+
+            <!-- Progress Sections -->
+            <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_large">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="progress-card">
+                        <h3 class="slds-text-heading_small slds-m-bottom_small">Current Streak</h3>
+                        <div class="streak-display">
+                            <lightning-icon icon-name="utility:fire" size="large" class="streak-icon"></lightning-icon>
+                            <span class="streak-value">{stats.currentStreak}</span>
+                            <span class="streak-label">wins in a row</span>
+                        </div>
+                        <div class="streak-best">Best: {stats.bestStreak} wins</div>
+                    </div>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="progress-card">
+                        <h3 class="slds-text-heading_small slds-m-bottom_small">Rank</h3>
+                        <div class="rank-display">
+                            <div class="rank-number">#{stats.rank}</div>
+                            <div class="rank-text">
+                                Top {topPercentile}%
+                                <div class="rank-subtext">out of {stats.totalPlayers} players</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level Progress -->
+            <div class="progress-section slds-m-bottom_large">
+                <h3 class="slds-text-heading_small slds-m-bottom_small">Level Progress</h3>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-progress-bar
+                            value={levelProgress}
+                            variant="circular">
+                        </lightning-progress-bar>
+                        <div class="progress-text slds-m-top_x-small">
+                            {stats.nextLevelPoints} points to Level {nextLevel}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Progress -->
+            <div class="progress-section slds-m-bottom_large">
+                <div class="section-header">
+                    <h3 class="slds-text-heading_small">Achievements</h3>
+                    <lightning-button
+                        variant="base"
+                        label="View All"
+                        onclick={handleViewAllAchievements}>
+                    </lightning-button>
+                </div>
+                <div class="achievement-progress slds-m-bottom_small">
+                    <lightning-progress-bar
+                        value={achievementProgress}>
+                    </lightning-progress-bar>
+                    <div class="progress-text slds-m-top_x-small">
+                        {stats.achievements} of {stats.totalAchievements} achievements unlocked
+                    </div>
+                </div>
+                
+                <!-- Achievement Icons -->
+                <div class="achievement-grid">
+                    <template for:each={earnedAchievements} for:item="achievement">
+                        <div key={achievement.id} class="achievement-item earned" title={achievement.name}>
+                            <lightning-icon icon-name={achievement.icon} size="medium"></lightning-icon>
+                            <div class="achievement-name">{achievement.name}</div>
+                        </div>
+                    </template>
+                    <template for:each={lockedAchievements} for:item="achievement">
+                        <div key={achievement.id} class="achievement-item locked" title={achievement.name}>
+                            <lightning-icon icon-name="utility:lock" size="medium"></lightning-icon>
+                            <div class="achievement-name">{achievement.name}</div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Recent Games -->
+            <div class="recent-games-section">
+                <div class="section-header">
+                    <h3 class="slds-text-heading_small">Recent Games</h3>
+                    <lightning-button
+                        variant="base"
+                        label="View All"
+                        onclick={handleViewAllGames}>
+                    </lightning-button>
+                </div>
+                <div class="recent-games-list">
+                    <template for:each={recentGames} for:item="game">
+                        <div key={game.id} class="game-item">
+                            <div class="game-name">{game.name}</div>
+                            <div class="game-details">
+                                <lightning-badge label={game.result} class={game.result}></lightning-badge>
+                                <span class="game-score">{game.score} pts</span>
+                                <span class="game-date">{game.date}</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

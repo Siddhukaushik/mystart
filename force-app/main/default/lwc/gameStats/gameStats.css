@@ -1,0 +1,254 @@
+.player-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.player-level {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.level-text {
+    font-size: 0.875rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #f3f3f3;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.stat-icon {
+    margin-bottom: 0.5rem;
+}
+
+.icon-blue {
+    color: #0176d3;
+}
+
+.icon-green {
+    color: #4bca81;
+}
+
+.icon-red {
+    color: #fe5c5c;
+}
+
+.icon-purple {
+    color: #9050e9;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #032d60;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #706e6b;
+}
+
+.progress-card {
+    padding: 1rem;
+    background: #fafaf9;
+    border: 1px solid #dddbda;
+    border-radius: 0.5rem;
+    height: 100%;
+}
+
+.streak-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.streak-icon {
+    color: #ff6b35;
+}
+
+.streak-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #032d60;
+}
+
+.streak-label {
+    font-size: 0.875rem;
+    color: #706e6b;
+}
+
+.streak-best {
+    text-align: center;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #dddbda;
+    font-size: 0.875rem;
+    color: #706e6b;
+}
+
+.rank-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rank-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.rank-text {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #032d60;
+}
+
+.rank-subtext {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #706e6b;
+}
+
+.progress-section {
+    padding: 1rem;
+    background: #fafaf9;
+    border-radius: 0.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-text {
+    font-size: 0.875rem;
+    color: #706e6b;
+    text-align: center;
+}
+
+.achievement-progress {
+    margin-bottom: 1rem;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.achievement-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.achievement-item.earned {
+    background: #e3f3ff;
+    border: 2px solid #0176d3;
+}
+
+.achievement-item.earned lightning-icon {
+    color: #ffd700;
+}
+
+.achievement-item.locked {
+    background: #f3f3f3;
+    border: 2px solid #dddbda;
+    opacity: 0.6;
+}
+
+.achievement-item.locked lightning-icon {
+    color: #706e6b;
+}
+
+.achievement-name {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.recent-games-section {
+    padding: 1rem;
+    background: #fafaf9;
+    border-radius: 0.5rem;
+}
+
+.recent-games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.game-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: white;
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+}
+
+.game-name {
+    font-weight: bold;
+    color: #032d60;
+}
+
+.game-details {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+lightning-badge.Win {
+    --sds-c-badge-color-background: #4bca81;
+}
+
+lightning-badge.Loss {
+    --sds-c-badge-color-background: #fe5c5c;
+}
+
+.game-score {
+    font-weight: 600;
+    color: #0176d3;
+}
+
+.game-date {
+    font-size: 0.75rem;
+    color: #706e6b;
+}

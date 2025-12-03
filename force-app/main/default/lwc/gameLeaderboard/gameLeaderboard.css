@@ -1,0 +1,169 @@
+.podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0.5rem;
+}
+
+.podium-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+}
+
+.podium-first {
+    order: 2;
+    transform: translateY(-10px);
+    border: 3px solid #ffd700;
+}
+
+.podium-second {
+    order: 1;
+    border: 3px solid #c0c0c0;
+}
+
+.podium-third {
+    order: 3;
+    border: 3px solid #cd7f32;
+}
+
+.podium-trophy {
+    margin-bottom: 0.5rem;
+}
+
+.trophy-gold {
+    color: #ffd700;
+}
+
+.trophy-silver {
+    color: #c0c0c0;
+}
+
+.trophy-bronze {
+    color: #cd7f32;
+}
+
+.podium-rank {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #032d60;
+    margin-bottom: 0.5rem;
+}
+
+.podium-avatar {
+    margin-bottom: 0.5rem;
+}
+
+.podium-name {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.25rem;
+    color: #032d60;
+}
+
+.podium-score {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #0176d3;
+}
+
+.leaderboard-table {
+    margin-top: 1rem;
+}
+
+lightning-datatable {
+    border-radius: 0.25rem;
+}
+
+.rank-gold {
+    background-color: #ffd700 !important;
+    color: #000 !important;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rank-silver {
+    background-color: #c0c0c0 !important;
+    color: #000 !important;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rank-bronze {
+    background-color: #cd7f32 !important;
+    color: #fff !important;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-cell {
+    font-weight: bold;
+    color: #0176d3;
+}
+
+.trend-up {
+    color: #4bca81;
+}
+
+.trend-down {
+    color: #fe5c5c;
+}
+
+.trend-same {
+    color: #706e6b;
+}
+
+.stats-summary {
+    border-top: 1px solid #dddbda;
+    padding-top: 1rem;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #f3f3f3;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.stat-icon {
+    margin-bottom: 0.5rem;
+    color: #0176d3;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #032d60;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #706e6b;
+}

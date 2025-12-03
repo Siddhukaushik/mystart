@@ -1,0 +1,237 @@
+.game-header {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.game-header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-actions {
+    text-align: center;
+}
+
+.play-button-large {
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+.game-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #032d60;
+    margin-bottom: 0.5rem;
+}
+
+.game-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #706e6b;
+    font-size: 0.875rem;
+}
+
+lightning-badge.Easy {
+    --sds-c-badge-color-background: #4bca81;
+}
+
+lightning-badge.Medium {
+    --sds-c-badge-color-background: #ffb75d;
+}
+
+lightning-badge.Hard {
+    --sds-c-badge-color-background: #fe5c5c;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+lightning-icon.full {
+    color: #ffd700;
+}
+
+lightning-icon.half {
+    color: #ffd700;
+    opacity: 0.5;
+}
+
+lightning-icon.empty {
+    color: #dddbda;
+}
+
+.rating-text {
+    font-size: 0.875rem;
+    color: #706e6b;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.slds-tabs_default__nav {
+    border-bottom: 2px solid #dddbda;
+}
+
+.slds-tabs_default__link {
+    cursor: pointer;
+}
+
+.slds-is-active {
+    border-bottom: 3px solid #0176d3;
+}
+
+.game-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #3e3e3c;
+}
+
+.info-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+}
+
+.info-list dt {
+    font-weight: bold;
+    color: #032d60;
+}
+
+.info-list dd {
+    color: #3e3e3c;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #3e3e3c;
+}
+
+.feature-check {
+    color: #4bca81;
+}
+
+.requirements-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #3e3e3c;
+}
+
+.requirements-list li {
+    margin-bottom: 0.5rem;
+}
+
+.review-card {
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    background: #fafaf9;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.review-user-info {
+    flex: 1;
+}
+
+.review-user-name {
+    font-weight: bold;
+    color: #032d60;
+}
+
+.review-date {
+    font-size: 0.75rem;
+    color: #706e6b;
+}
+
+.review-rating {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.review-comment {
+    color: #3e3e3c;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.review-actions {
+    border-top: 1px solid #dddbda;
+    padding-top: 0.5rem;
+}
+
+.update-card {
+    border-left: 4px solid #0176d3;
+    padding-left: 1rem;
+    background: #f3f3f3;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.update-version {
+    font-weight: bold;
+    color: #032d60;
+    font-size: 1rem;
+}
+
+.update-date {
+    font-size: 0.875rem;
+    color: #706e6b;
+}
+
+.update-changes {
+    color: #3e3e3c;
+    line-height: 1.5;
+}
