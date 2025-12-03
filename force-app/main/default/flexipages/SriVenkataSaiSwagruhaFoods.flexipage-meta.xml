@@ -28,6 +28,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <masterLabel>SRI VENKATA SAI SWAGRUHA FOODS</masterLabel>
-    <template>home:desktopTemplate</template>
-    <type>HomePage</type>
+    <sobjectType>Account</sobjectType>
+    <template>flexipage:recordHomeSingleColTemplateDesktop</template>
+    <type>RecordPage</type>
 </FlexiPage>
