@@ -15,8 +15,8 @@
     <isOmniPinnedViewEnabled>true</isOmniPinnedViewEnabled>
     <label>Game</label>
     <navType>Standard</navType>
-    <tabs>Player__c</tabs>
     <tabs>Game_Centre</tabs>
+    <tabs>Player__c</tabs>
     <tabs>standard-OmniSupervisorLightning</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Account</tabs>
