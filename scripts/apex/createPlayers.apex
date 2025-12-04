@@ -9,11 +9,9 @@ Player__c deadshot = new Player__c(
     Email__c = 'deadshot@gamingpro.com',
     Phone__c = '+1-555-0001',
     Country__c = 'United States',
-    PlayerStatus__c = 'Active',
     AccountStatus__c = 'Verified',
     
     // Elite stats for Deadshot
-    TotalGamesPlayed__c = 5847,
     TotalMatches__c = 5847,
     TotalWins__c = 4521,
     TotalLosses__c = 1326,
@@ -29,11 +27,9 @@ Player__c deadshot = new Player__c(
     ExperiencePoints__c = 9875432,
     CurrentRank__c = 'Legendary',
     HoursPlayed__c = 8543.5,
-    TotalHoursPlayed__c = 8543.5,
     
     CurrentStreak__c = 47,
     BestStreak__c = 89,
-    HighestStreak__c = 89,
     
     FavoriteGame__c = 'Call of Duty',
     LastPlayedDate__c = System.now().addHours(-2),
@@ -80,7 +76,6 @@ List<String> ranks = new List<String>{
 };
 
 List<String> subscriptionTypes = new List<String>{'Free', 'Basic', 'Premium', 'Elite'};
-List<String> playerStatuses = new List<String>{'Active', 'Inactive'};
 List<String> accountStatuses = new List<String>{'Verified', 'Unverified', 'Pending'};
 
 for (Integer i = 1; i <= 199; i++) {
@@ -104,10 +99,8 @@ for (Integer i = 1; i <= 199; i++) {
         Email__c = playerName.toLowerCase() + '@gaming.com',
         Phone__c = '+1-555-' + String.valueOf(1000 + i).substring(1),
         Country__c = countries[Math.mod(i, countries.size())],
-        PlayerStatus__c = playerStatuses[Math.mod(i, 5) == 0 ? 1 : 0],
         AccountStatus__c = accountStatuses[Math.mod(i, accountStatuses.size())],
         
-        TotalGamesPlayed__c = totalGames,
         TotalMatches__c = totalGames,
         TotalWins__c = wins,
         TotalLosses__c = losses,
@@ -123,11 +116,9 @@ for (Integer i = 1; i <= 199; i++) {
         ExperiencePoints__c = Integer.valueOf((10 + skillMultiplier * 150) * 5000),
         CurrentRank__c = ranks[Integer.valueOf(skillMultiplier * (ranks.size() - 1))],
         HoursPlayed__c = Decimal.valueOf(totalGames * (0.3 + skillMultiplier * 0.5)).setScale(2),
-        TotalHoursPlayed__c = Decimal.valueOf(totalGames * (0.3 + skillMultiplier * 0.5)).setScale(2),
         
         CurrentStreak__c = Math.mod(i, 20),
         BestStreak__c = 5 + Math.mod(i * 7, 50),
-        HighestStreak__c = 5 + Math.mod(i * 7, 50),
         
         FavoriteGame__c = favoriteGames[Math.mod(i, favoriteGames.size())],
         LastPlayedDate__c = System.now().addHours(-Math.mod(i, 168)),

@@ -34,10 +34,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>PlayerStatus__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>LastPlayedDate__c</field>
             </layoutItems>
         </layoutColumns>
@@ -49,10 +45,6 @@
         <editHeading>true</editHeading>
         <label>Game Statistics</label>
         <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TotalGamesPlayed__c</field>
-            </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>TotalMatches__c</field>
@@ -116,10 +108,6 @@
                 <behavior>Edit</behavior>
                 <field>HoursPlayed__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>TotalHoursPlayed__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -129,10 +117,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>BestStreak__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>HighestStreak__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
