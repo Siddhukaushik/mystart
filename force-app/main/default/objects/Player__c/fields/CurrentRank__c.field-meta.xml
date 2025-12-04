@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CurrentRank__c</fullName>
+    <externalId>false</externalId>
+    <label>Current Rank</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bronze III</fullName>
+                <default>false</default>
+                <label>Bronze III</label>
+            </value>
+            <value>
+                <fullName>Bronze II</fullName>
+                <default>false</default>
+                <label>Bronze II</label>
+            </value>
+            <value>
+                <fullName>Bronze I</fullName>
+                <default>false</default>
+                <label>Bronze I</label>
+            </value>
+            <value>
+                <fullName>Silver III</fullName>
+                <default>false</default>
+                <label>Silver III</label>
+            </value>
+            <value>
+                <fullName>Silver II</fullName>
+                <default>false</default>
+                <label>Silver II</label>
+            </value>
+            <value>
+                <fullName>Silver I</fullName>
+                <default>false</default>
+                <label>Silver I</label>
+            </value>
+            <value>
+                <fullName>Gold III</fullName>
+                <default>false</default>
+                <label>Gold III</label>
+            </value>
+            <value>
+                <fullName>Gold II</fullName>
+                <default>false</default>
+                <label>Gold II</label>
+            </value>
+            <value>
+                <fullName>Gold I</fullName>
+                <default>false</default>
+                <label>Gold I</label>
+            </value>
+            <value>
+                <fullName>Platinum III</fullName>
+                <default>false</default>
+                <label>Platinum III</label>
+            </value>
+            <value>
+                <fullName>Platinum II</fullName>
+                <default>false</default>
+                <label>Platinum II</label>
+            </value>
+            <value>
+                <fullName>Platinum I</fullName>
+                <default>false</default>
+                <label>Platinum I</label>
+            </value>
+            <value>
+                <fullName>Diamond III</fullName>
+                <default>false</default>
+                <label>Diamond III</label>
+            </value>
+            <value>
+                <fullName>Diamond II</fullName>
+                <default>false</default>
+                <label>Diamond II</label>
+            </value>
+            <value>
+                <fullName>Diamond I</fullName>
+                <default>false</default>
+                <label>Diamond I</label>
+            </value>
+            <value>
+                <fullName>Master</fullName>
+                <default>false</default>
+                <label>Master</label>
+            </value>
+            <value>
+                <fullName>Grandmaster</fullName>
+                <default>false</default>
+                <label>Grandmaster</label>
+            </value>
+            <value>
+                <fullName>Champion</fullName>
+                <default>false</default>
+                <label>Champion</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
