@@ -7,7 +7,7 @@
 		<apex:outputText value=" | "/>
 		<apex:outputLink value="/site/ForgotPassword.apexp">{!$Label.site.forgot_your_password_q}</apex:outputLink>
 		<apex:outputText value=" | " rendered="{!$Site.RegistrationEnabled}"/>
-		<apex:outputLink value="/site/SiteRegister.apexp" rendered="{!$Site.RegistrationEnabled}">{!$Label.site.new_user_q}</apex:outputLink>
+		<!-- Registration disabled -->
 	  </apex:panelGroup>
 	  <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">{!$Label.site.logout}</apex:outputLink>
     </apex:panelGrid>
