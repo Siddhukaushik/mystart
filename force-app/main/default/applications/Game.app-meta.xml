@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#000000</headerColor>
+        <logo>wherarewegoing</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <description>gaming</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>true</isOmniPinnedViewEnabled>
+    <label>Game</label>
+    <navType>Standard</navType>
+    <tabs>Player__c</tabs>
+    <tabs>Game_Centre</tabs>
+    <tabs>standard-OmniSupervisorLightning</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Scorecard</tabs>
+    <tabs>standard-Refund</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Recommendation</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Game_UtilityBar</utilityBar>
+</CustomApplication>
