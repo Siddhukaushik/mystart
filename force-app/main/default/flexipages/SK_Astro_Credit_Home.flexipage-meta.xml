@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Home page for Astro Credit app</description>
+    <masterLabel>Astro Credit Home</masterLabel>
+    <template>OneRegion</template>
+    <regions>
+        <region>
+            <components>
+                <componentInstance>
+                    <componentName>force:recentItems</componentName>
+                    <properties>
+                        <property>
+                            <name>objectApiName</name>
+                            <value>SK_Credit_Application__c</value>
+                        </property>
+                    </properties>
+                </componentInstance>
+            </components>
+        </region>
+    </regions>
+    <type>AppPage</type>
+</FlexiPage>

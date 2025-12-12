@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_Credit_Rating__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(SK_Credit_Score__c &gt;= 750, "Excellent",
+IF(SK_Credit_Score__c &gt;= 700, "Good",
+IF(SK_Credit_Score__c &gt;= 650, "Fair",
+IF(SK_Credit_Score__c &gt;= 600, "Poor", "Very Poor"))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Credit Rating</label>
+    <type>Text</type>
+</CustomField>
