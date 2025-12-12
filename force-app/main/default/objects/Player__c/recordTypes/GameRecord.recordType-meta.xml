@@ -4,4 +4,159 @@
     <active>true</active>
     <description>Record type for tracking player game records and subscription information</description>
     <label>Game Record</label>
+    <picklistValues>
+        <picklist>AccountStatus__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Banned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspended</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CurrentRank__c</picklist>
+        <values>
+            <fullName>Bronze I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bronze II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bronze III</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Champion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond III</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold III</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grandmaster</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum III</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver III</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FavoriteGame__c</picklist>
+        <values>
+            <fullName>Call of Duty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chess Master</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fortnite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PUBG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Puzzle Quest</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SubscriptionStatus__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspended</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SubscriptionType__c</picklist>
+        <values>
+            <fullName>Basic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Elite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Premium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Astro Credit</label>
+    <navType>Standard</navType>
+    <tabs>SK_Credit_Application__c</tabs>
+    <tabs>Credit_Application_Home_page</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-MarketSegmentActivation</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

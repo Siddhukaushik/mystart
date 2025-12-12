@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_Approval_Percentage__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(SK_Requested_Amount__c &gt; 0, (SK_Approved_Amount__c / SK_Requested_Amount__c), 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval Percentage</label>
+    <precision>18</precision>
+    <scale>2</scale>
+    <type>Percent</type>
+</CustomField>
