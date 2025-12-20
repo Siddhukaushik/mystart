@@ -13,22 +13,18 @@
             <value>
                 <fullName>Active</fullName>
                 <default>true</default>
-                <label>Active</label>
             </value>
             <value>
                 <fullName>Exited</fullName>
                 <default>false</default>
-                <label>Exited</label>
             </value>
             <value>
                 <fullName>Written Off</fullName>
                 <default>false</default>
-                <label>Written Off</label>
             </value>
             <value>
                 <fullName>Under LOI</fullName>
                 <default>false</default>
-                <label>Under LOI</label>
             </value>
         </valueSetDefinition>
     </valueSet>

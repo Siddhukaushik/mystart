@@ -42,6 +42,10 @@
                 <field>SK_ACH_Amount_Paid__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SK_ACH_Amount_Outstanding__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SK_ACH_Payment_Date__c</field>
             </layoutItems>

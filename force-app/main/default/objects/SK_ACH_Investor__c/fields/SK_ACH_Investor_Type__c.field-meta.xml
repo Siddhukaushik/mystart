@@ -13,52 +13,42 @@
             <value>
                 <fullName>Pension Fund</fullName>
                 <default>false</default>
-                <label>Pension Fund</label>
             </value>
             <value>
                 <fullName>Endowment</fullName>
                 <default>false</default>
-                <label>Endowment</label>
             </value>
             <value>
                 <fullName>Foundation</fullName>
                 <default>false</default>
-                <label>Foundation</label>
             </value>
             <value>
                 <fullName>Family Office</fullName>
                 <default>false</default>
-                <label>Family Office</label>
             </value>
             <value>
                 <fullName>Insurance Company</fullName>
                 <default>false</default>
-                <label>Insurance Company</label>
             </value>
             <value>
                 <fullName>Sovereign Wealth Fund</fullName>
                 <default>false</default>
-                <label>Sovereign Wealth Fund</label>
             </value>
             <value>
                 <fullName>Fund of Funds</fullName>
                 <default>false</default>
-                <label>Fund of Funds</label>
             </value>
             <value>
                 <fullName>Corporate</fullName>
                 <default>false</default>
-                <label>Corporate</label>
             </value>
             <value>
                 <fullName>Individual</fullName>
                 <default>false</default>
-                <label>Individual</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

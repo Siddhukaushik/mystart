@@ -13,27 +13,22 @@
             <value>
                 <fullName>Investment</fullName>
                 <default>true</default>
-                <label>Investment</label>
             </value>
             <value>
                 <fullName>Management Fees</fullName>
                 <default>false</default>
-                <label>Management Fees</label>
             </value>
             <value>
                 <fullName>Operating Expenses</fullName>
                 <default>false</default>
-                <label>Operating Expenses</label>
             </value>
             <value>
                 <fullName>Follow-on Investment</fullName>
                 <default>false</default>
-                <label>Follow-on Investment</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

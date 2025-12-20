@@ -13,32 +13,26 @@
             <value>
                 <fullName>Growth Equity</fullName>
                 <default>true</default>
-                <label>Growth Equity</label>
             </value>
             <value>
                 <fullName>Buyout</fullName>
                 <default>false</default>
-                <label>Buyout</label>
             </value>
             <value>
                 <fullName>Venture Capital</fullName>
                 <default>false</default>
-                <label>Venture Capital</label>
             </value>
             <value>
                 <fullName>Minority Stake</fullName>
                 <default>false</default>
-                <label>Minority Stake</label>
             </value>
             <value>
                 <fullName>Majority Control</fullName>
                 <default>false</default>
-                <label>Majority Control</label>
             </value>
             <value>
                 <fullName>Recapitalization</fullName>
                 <default>false</default>
-                <label>Recapitalization</label>
             </value>
         </valueSetDefinition>
     </valueSet>

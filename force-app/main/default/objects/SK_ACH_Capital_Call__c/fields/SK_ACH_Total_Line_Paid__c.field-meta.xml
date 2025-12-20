@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_ACH_Total_Line_Paid__c</fullName>
+    <label>Total Paid</label>
+    <description>Sum of amounts paid on all lines</description>
+    <summarizedField>SK_ACH_Capital_Call_Line__c.SK_ACH_Amount_Paid__c</summarizedField>
+    <summaryForeignKey>SK_ACH_Capital_Call_Line__c.SK_ACH_Capital_Call__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

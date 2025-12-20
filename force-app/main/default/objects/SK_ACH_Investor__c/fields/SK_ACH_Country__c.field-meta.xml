@@ -13,47 +13,38 @@
             <value>
                 <fullName>United States</fullName>
                 <default>true</default>
-                <label>United States</label>
             </value>
             <value>
                 <fullName>United Kingdom</fullName>
                 <default>false</default>
-                <label>United Kingdom</label>
             </value>
             <value>
                 <fullName>Canada</fullName>
                 <default>false</default>
-                <label>Canada</label>
             </value>
             <value>
                 <fullName>Germany</fullName>
                 <default>false</default>
-                <label>Germany</label>
             </value>
             <value>
                 <fullName>France</fullName>
                 <default>false</default>
-                <label>France</label>
             </value>
             <value>
                 <fullName>Switzerland</fullName>
                 <default>false</default>
-                <label>Switzerland</label>
             </value>
             <value>
                 <fullName>Singapore</fullName>
                 <default>false</default>
-                <label>Singapore</label>
             </value>
             <value>
                 <fullName>Australia</fullName>
                 <default>false</default>
-                <label>Australia</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>
