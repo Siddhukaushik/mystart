@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_ACH_Reviewed_By__c</fullName>
+    <label>Reviewed By</label>
+    <description>User who reviewed valuation</description>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Reviewed_Valuations</relationshipName>
+    <deleteConstraint>SetNull</deleteConstraint>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_ACH_Approved_By__c</fullName>
+    <label>Approved By</label>
+    <description>User who approved distribution</description>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Approved_Distributions</relationshipName>
+    <deleteConstraint>SetNull</deleteConstraint>
+</CustomField>

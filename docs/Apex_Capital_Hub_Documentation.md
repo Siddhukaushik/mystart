@@ -27,7 +27,8 @@
 - **Distributions & Waterfall Logic** – Automate profit distributions with hurdle rates, catch-up, and carried interest
 - **NAV & Performance Metrics** – Calculate Net Asset Value, IRR, TVPI, DPI, and RVPI
 - **Investor Reporting** – Generate capital account statements and K-1 summaries
-- **Compliance & Audit Trail** – Full history of transactions and approvals
+- **Compliance & Audit Trail** – Full history of transa
+ctions and approvals
 
 ### Technical Stack
 - **Platform:** Salesforce Lightning
@@ -293,34 +294,234 @@ sf project deploy start --source-dir force-app/main/default/applications --sourc
 
 ## Future Roadmap
 
-### Phase 2: Custom Fields
-- [ ] Add lookup relationships between objects
-- [ ] Add currency fields (amounts, totals)
-- [ ] Add picklist fields (status, type)
-- [ ] Add formula fields (calculations)
-- [ ] Add date fields (due dates, effective dates)
+### Phase 2: Custom Fields (Next)
+- [ ] Fund fields (vintage year, target size, management fee %, carried interest %)
+- [ ] Investor fields (type, contact info, tax ID, accreditation status)
+- [ ] Commitment fields (amount, date, unfunded balance - formula)
+- [ ] Capital Call fields (call date, due date, amount, status)
+- [ ] Distribution fields (date, type, total amount)
+- [ ] Investment fields (company, sector, investment date, cost basis)
+- [ ] Valuation fields (date, fair value, method, unrealized gain - formula)
+- [ ] Lookup/Master-Detail relationships between objects
 
 ### Phase 3: Automation
-- [ ] Flow: Auto-generate Capital Call Lines from Commitments
+- [ ] Flow: Auto-generate Capital Call Lines from Commitments (pro-rata)
 - [ ] Flow: Auto-generate Distribution Lines based on ownership %
-- [ ] Apex: Waterfall distribution calculator
-- [ ] Apex: IRR/TVPI/DPI calculation engine
+- [ ] Flow: Update Commitment unfunded balance after capital call payment
+- [ ] Apex Trigger: Validate capital call doesn't exceed unfunded commitment
+- [ ] Apex: Waterfall distribution calculator (return of capital → preferred return → catch-up → carried interest)
 
-### Phase 4: Reporting
-- [ ] Fund Performance Dashboard
+### Phase 4: Reporting & Dashboards
+- [ ] Fund Performance Dashboard (NAV, IRR, TVPI, DPI, RVPI)
 - [ ] Investor Capital Account Report
 - [ ] Portfolio Valuation Summary
 - [ ] Capital Call Aging Report
+- [ ] Distribution History Report
 
-### Phase 5: Experience Cloud
-- [ ] Investor Portal for LPs
-- [ ] Document sharing (K-1s, statements)
-- [ ] Self-service capital call acknowledgment
+### Phase 5: Experience Cloud (Investor Portal)
+- [ ] LP Portal for investors to view their holdings
+- [ ] Document sharing (K-1s, quarterly statements)
+- [ ] Capital call acknowledgment and wire instructions
+- [ ] Self-service commitment tracking
 
 ### Phase 6: Integrations
 - [ ] Bank feed integration for payment tracking
-- [ ] Document generation (PDF statements)
-- [ ] E-signature for subscription agreements
+- [ ] Document generation (PDF statements via Conga/Drawloop)
+- [ ] E-signature for subscription agreements (DocuSign)
+- [ ] Accounting system sync (QuickBooks, NetSuite)
+
+---
+
+## Architecture Pattern
+
+### Layered Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      PRESENTATION LAYER                         │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐  │
+│  │ Lightning   │  │ Experience  │  │ Reports &               │  │
+│  │ App (LWC)   │  │ Cloud Portal│  │ Dashboards              │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      BUSINESS LOGIC LAYER                       │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  │
+│  │ Apex Services   │  │ Flows           │  │ Validation      │  │
+│  │ (Calculations)  │  │ (Automation)    │  │ Rules           │  │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘  │
+│                                                                 │
+│  Key Services:                                                  │
+│  • SK_ACH_WaterfallService - Distribution calculations          │
+│  • SK_ACH_CapitalCallService - Call generation & tracking       │
+│  • SK_ACH_ValuationService - NAV & performance metrics          │
+│  • SK_ACH_CommitmentService - Unfunded balance management       │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      DATA ACCESS LAYER                          │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  │
+│  │ Apex Selectors  │  │ Trigger         │  │ Domain Classes  │  │
+│  │ (SOQL Queries)  │  │ Handlers        │  │ (Business Rules)│  │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      DATA MODEL LAYER                           │
+│  ┌─────────┐ ┌──────────┐ ┌────────────┐ ┌──────────────────┐   │
+│  │ Fund    │ │ Investor │ │ Commitment │ │ Capital Call     │   │
+│  └─────────┘ └──────────┘ └────────────┘ └──────────────────┘   │
+│  ┌─────────────────┐ ┌────────────┐ ┌───────────┐               │
+│  │ Distribution    │ │ Investment │ │ Valuation │               │
+│  └─────────────────┘ └────────────┘ └───────────┘               │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Design Patterns Used
+
+| Pattern | Implementation | Purpose |
+|---------|----------------|---------|
+| **Selector Pattern** | `SK_ACH_FundSelector.cls` | Centralized SOQL queries, reusable, testable |
+| **Service Pattern** | `SK_ACH_WaterfallService.cls` | Business logic separated from triggers |
+| **Domain Pattern** | `SK_ACH_Funds.cls` | Object-specific business rules |
+| **Trigger Handler** | `SK_ACH_FundTriggerHandler.cls` | One trigger per object, logic in handler |
+| **Unit of Work** | `SK_ACH_UnitOfWork.cls` | Bulkified DML operations |
+
+### Apex Class Naming Convention
+
+| Type | Pattern | Example |
+|------|---------|---------|
+| Service | `SK_ACH_{Domain}Service` | `SK_ACH_WaterfallService` |
+| Selector | `SK_ACH_{Object}Selector` | `SK_ACH_FundSelector` |
+| Domain | `SK_ACH_{Objects}` | `SK_ACH_Funds` |
+| Trigger Handler | `SK_ACH_{Object}TriggerHandler` | `SK_ACH_FundTriggerHandler` |
+| Trigger | `SK_ACH_{Object}Trigger` | `SK_ACH_FundTrigger` |
+| Test | `SK_ACH_{ClassName}Test` | `SK_ACH_WaterfallServiceTest` |
+| Batch | `SK_ACH_{Purpose}Batch` | `SK_ACH_NAVCalculationBatch` |
+| Controller | `SK_ACH_{Feature}Controller` | `SK_ACH_InvestorPortalController` |
+
+### LWC Component Structure
+
+```
+force-app/main/default/lwc/
+├── skAchFundDashboard/          # Fund overview with metrics
+├── skAchCapitalCallWizard/      # Multi-step capital call creation
+├── skAchDistributionCalculator/ # Waterfall distribution UI
+├── skAchInvestorSummary/        # LP holdings & performance
+├── skAchValuationChart/         # Portfolio valuation trends
+└── skAchCommitmentTracker/      # Visual commitment status
+```
+
+### Flow Inventory
+
+| Flow Name | Type | Trigger | Purpose |
+|-----------|------|---------|---------|
+| `SK_ACH_Capital_Call_Generation` | Screen Flow | Button | Create capital call with lines |
+| `SK_ACH_Distribution_Generation` | Screen Flow | Button | Create distribution with lines |
+| `SK_ACH_Commitment_Unfunded_Update` | Record-Triggered | After Capital Call Line insert | Update unfunded balance |
+| `SK_ACH_Investment_Valuation_Reminder` | Scheduled | Monthly | Notify for quarterly valuations |
+| `SK_ACH_Investor_Welcome` | Record-Triggered | After Investor insert | Send welcome email |
+
+---
+
+## Key Business Logic
+
+### 1. Waterfall Distribution Logic
+
+Private equity distributions follow a "waterfall" structure:
+
+```
+                    Total Distributable Amount
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│ STEP 1: Return of Capital                                   │
+│ Return LP's contributed capital first (100% to LPs)         │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│ STEP 2: Preferred Return (Hurdle)                           │
+│ LPs receive preferred return (typically 8%) before GP       │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│ STEP 3: GP Catch-Up                                         │
+│ GP receives 100% until they have 20% of total profits       │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│ STEP 4: Carried Interest Split                              │
+│ Remaining profits split 80% LP / 20% GP (carried interest)  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 2. Performance Metrics Formulas
+
+| Metric | Formula | Description |
+|--------|---------|-------------|
+| **TVPI** | (Distributions + NAV) / Paid-In Capital | Total Value to Paid-In |
+| **DPI** | Distributions / Paid-In Capital | Distributions to Paid-In |
+| **RVPI** | NAV / Paid-In Capital | Residual Value to Paid-In |
+| **IRR** | Internal Rate of Return | Time-weighted return (complex calc) |
+
+### 3. Capital Call Pro-Rata Calculation
+
+```
+Investor Call Amount = Total Call Amount × (Investor Commitment / Total Fund Commitments)
+```
+
+---
+
+## Security Model
+
+### Permission Sets
+
+| Permission Set | Access Level | Users |
+|----------------|--------------|-------|
+| `SK_ACH_Fund_Manager` | Full CRUD on all objects | Fund managers, CFO |
+| `SK_ACH_Investor_Relations` | Read all, Edit Investor/Commitment | IR team |
+| `SK_ACH_Analyst` | Read all objects | Junior analysts |
+| `SK_ACH_Portal_User` | Read own Commitments, Distributions | LP portal users |
+
+### Sharing Rules
+
+| Object | OWD | Sharing Rule |
+|--------|-----|--------------|
+| Fund | Private | Share with Fund Team |
+| Investor | Private | Share with IR Team |
+| Commitment | Private | Share based on Fund |
+| Capital Call | Private | Share based on Fund |
+| Distribution | Private | Share based on Fund |
+
+---
+
+## Next Steps (Immediate)
+
+### Step 1: Add Custom Fields (Priority)
+Create essential fields for each object to make the system functional.
+
+### Step 2: Create Relationships
+Add lookup/master-detail fields to connect objects.
+
+### Step 3: Build List Views
+Create useful list views for each object (e.g., "Open Capital Calls", "Active Funds").
+
+### Step 4: Create Permission Set
+Build `SK_ACH_Fund_Manager` permission set for admin access.
+
+### Step 5: Test with Sample Data
+Create sample Fund, Investors, Commitments to validate the model.
+
+---
+
+**Ready to proceed with Step 1 (Custom Fields)?**
 
 ---
 

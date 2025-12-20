@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Home page for Apex Capital Hub - Private Equity Fund Administration</description>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:richText</componentName>
+                <identifier>richText1</identifier>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;h1&gt;&lt;b&gt;Welcome to Apex Capital Hub&lt;/b&gt;&lt;/h1&gt;&lt;p&gt;Unified Fund Operations, Elevated Returns&lt;/p&gt;</value>
+                </componentInstanceProperties>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Apex Capital Hub Home</masterLabel>
+    <template>
+        <name>flexipage:defaultAppHomeTemplate</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

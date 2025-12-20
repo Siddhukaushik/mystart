@@ -1,0 +1,117 @@
+Private Equity / Apex Capital Hub – Key Terms (Chat Version)
+
+LP – Limited Partner
+Investors who provide capital to the fund. They have limited liability and do not manage the fund.
+
+GP – General Partner
+The fund manager responsible for investment decisions, operations, and performance.
+
+Fund
+The investment vehicle that pools capital from LPs to invest in portfolio companies.
+
+Commitment
+The total amount an LP agrees to invest in a fund (not paid upfront).
+
+Capital Call (Drawdown)
+A request sent by the GP asking LPs to contribute a portion of their committed capital.
+
+Unfunded Commitment
+The remaining amount of an LP’s commitment that has not yet been called.
+
+Investment
+A deployment of fund capital into a portfolio company.
+
+Valuation
+The assessed fair value of an investment at a specific point in time.
+
+NAV – Net Asset Value
+Total value of fund assets minus liabilities.
+
+Distribution
+Money returned to LPs from investment profits or return of capital.
+
+Waterfall
+The rules that define how distributions are split between LPs and the GP.
+
+Preferred Return (Hurdle Rate)
+Minimum return (e.g., 8%) that LPs must receive before the GP earns carry.
+
+Carried Interest (Carry)
+The GP’s share of profits, typically 20%, after LPs receive preferred returns.
+
+Catch-Up
+A phase where the GP receives most or all profits until their carried interest percentage is met.
+
+TVPI – Total Value to Paid-In
+(Total Distributions + NAV) ÷ Paid-In Capital
+
+DPI – Distributions to Paid-In
+Distributions ÷ Paid-In Capital
+
+RVPI – Residual Value to Paid-In
+NAV ÷ Paid-In Capital
+
+IRR – Internal Rate of Return
+Annualized rate of return considering timing of cash flows.
+
+
+In an ERD (Entity Relationship Diagram):
+
+1 : N = One-to-Many relationship
+
+Meaning:
+👉 One record in the parent entity can be related to many records in the child entity.
+
+Simple Example
+
+1 Fund → Many Commitments
+
+One Fund
+
+Multiple Commitments (one per LP)
+
+Fund (1) ─────────► Commitment (N)
+
+From your Apex Capital Hub ERD
+
+Here are concrete examples:
+
+1. Fund → Commitment (1:N)
+
+One Fund can have many Commitments
+
+Each Commitment belongs to only one Fund
+
+2. Capital Call → Capital Call Line (1:N)
+
+One Capital Call
+
+Many Capital Call Lines (one per LP)
+
+3. Distribution → Distribution Line (1:N)
+
+One Distribution
+
+Many Distribution Lines
+
+4. Investment → Valuation (1:N)
+
+One Investment
+
+Many Valuations over time
+
+How this maps to Salesforce
+ERD Relationship	Salesforce Implementation
+1:N (One-to-Many)	Lookup or Master-Detail
+Strong ownership	Master-Detail
+Independent child	Lookup
+
+Example:
+
+Capital Call → Capital Call Line = Master-Detail (child cannot exist without parent)
+
+One-line interview explanation
+
+“1:N means one parent record can be associated with multiple child records, commonly implemented in Salesforce using lookup or master-detail relationships.”
+
+If you want, I can also explain 1:1 and M:N with Salesforce examples.
