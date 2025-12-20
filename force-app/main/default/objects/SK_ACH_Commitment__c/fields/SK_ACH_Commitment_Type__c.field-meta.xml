@@ -13,22 +13,18 @@
             <value>
                 <fullName>Initial</fullName>
                 <default>true</default>
-                <label>Initial</label>
             </value>
             <value>
                 <fullName>Additional</fullName>
                 <default>false</default>
-                <label>Additional</label>
             </value>
             <value>
                 <fullName>Transfer</fullName>
                 <default>false</default>
-                <label>Transfer</label>
             </value>
             <value>
                 <fullName>Reduction</fullName>
                 <default>false</default>
-                <label>Reduction</label>
             </value>
         </valueSetDefinition>
     </valueSet>

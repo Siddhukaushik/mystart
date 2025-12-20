@@ -13,17 +13,14 @@
             <value>
                 <fullName>Pending</fullName>
                 <default>true</default>
-                <label>Pending</label>
             </value>
             <value>
                 <fullName>Paid</fullName>
                 <default>false</default>
-                <label>Paid</label>
             </value>
             <value>
                 <fullName>Cancelled</fullName>
                 <default>false</default>
-                <label>Cancelled</label>
             </value>
         </valueSetDefinition>
     </valueSet>

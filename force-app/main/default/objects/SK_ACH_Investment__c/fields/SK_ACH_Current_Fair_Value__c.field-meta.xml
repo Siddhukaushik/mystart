@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_ACH_Current_Fair_Value__c</fullName>
+    <label>Current Fair Value</label>
+    <description>Most recent valuation fair value</description>
+    <summarizedField>SK_ACH_Valuation__c.SK_ACH_Fair_Value__c</summarizedField>
+    <summaryForeignKey>SK_ACH_Valuation__c.SK_ACH_Valuation_Investment__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

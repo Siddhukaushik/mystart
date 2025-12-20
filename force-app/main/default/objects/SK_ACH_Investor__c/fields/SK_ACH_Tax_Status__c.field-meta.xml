@@ -13,27 +13,22 @@
             <value>
                 <fullName>Tax-Exempt</fullName>
                 <default>false</default>
-                <label>Tax-Exempt</label>
             </value>
             <value>
                 <fullName>Taxable Domestic</fullName>
                 <default>false</default>
-                <label>Taxable Domestic</label>
             </value>
             <value>
                 <fullName>Taxable Foreign</fullName>
                 <default>false</default>
-                <label>Taxable Foreign</label>
             </value>
             <value>
                 <fullName>UBTI Subject</fullName>
                 <default>false</default>
-                <label>UBTI Subject</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

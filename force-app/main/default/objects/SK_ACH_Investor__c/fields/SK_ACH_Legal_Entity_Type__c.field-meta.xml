@@ -13,32 +13,26 @@
             <value>
                 <fullName>Corporation</fullName>
                 <default>false</default>
-                <label>Corporation</label>
             </value>
             <value>
                 <fullName>LLC</fullName>
                 <default>false</default>
-                <label>LLC</label>
             </value>
             <value>
                 <fullName>Partnership</fullName>
                 <default>false</default>
-                <label>Partnership</label>
             </value>
             <value>
                 <fullName>Trust</fullName>
                 <default>false</default>
-                <label>Trust</label>
             </value>
             <value>
                 <fullName>Individual</fullName>
                 <default>false</default>
-                <label>Individual</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

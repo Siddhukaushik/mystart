@@ -13,27 +13,22 @@
             <value>
                 <fullName>Delaware</fullName>
                 <default>false</default>
-                <label>Delaware</label>
             </value>
             <value>
                 <fullName>Cayman Islands</fullName>
                 <default>false</default>
-                <label>Cayman Islands</label>
             </value>
             <value>
                 <fullName>Luxembourg</fullName>
                 <default>false</default>
-                <label>Luxembourg</label>
             </value>
             <value>
                 <fullName>Ireland</fullName>
                 <default>false</default>
-                <label>Ireland</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

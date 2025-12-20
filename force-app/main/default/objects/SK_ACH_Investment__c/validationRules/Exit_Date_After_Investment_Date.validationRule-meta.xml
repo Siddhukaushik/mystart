@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exit_Date_After_Investment_Date</fullName>
+    <active>true</active>
+    <description>Exit date must be after investment date</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(SK_ACH_Exit_Date__c)),
+    SK_ACH_Exit_Date__c &lt; SK_ACH_Investment_Date__c
+)</errorConditionFormula>
+    <errorDisplayField>SK_ACH_Exit_Date__c</errorDisplayField>
+    <errorMessage>Exit date must be on or after the investment date.</errorMessage>
+</ValidationRule>

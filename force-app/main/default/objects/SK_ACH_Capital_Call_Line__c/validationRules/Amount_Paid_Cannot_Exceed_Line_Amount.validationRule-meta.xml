@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Paid_Cannot_Exceed_Line_Amount</fullName>
+    <active>true</active>
+    <description>Amount paid cannot exceed the line amount</description>
+    <errorConditionFormula>SK_ACH_Amount_Paid__c &gt; SK_ACH_Line_Amount__c</errorConditionFormula>
+    <errorDisplayField>SK_ACH_Amount_Paid__c</errorDisplayField>
+    <errorMessage>Amount paid cannot exceed line amount.</errorMessage>
+</ValidationRule>

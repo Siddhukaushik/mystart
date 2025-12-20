@@ -13,32 +13,26 @@
             <value>
                 <fullName>IPO</fullName>
                 <default>false</default>
-                <label>IPO</label>
             </value>
             <value>
                 <fullName>Strategic Sale</fullName>
                 <default>false</default>
-                <label>Strategic Sale</label>
             </value>
             <value>
                 <fullName>Secondary Sale</fullName>
                 <default>false</default>
-                <label>Secondary Sale</label>
             </value>
             <value>
                 <fullName>Buyback</fullName>
                 <default>false</default>
-                <label>Buyback</label>
             </value>
             <value>
                 <fullName>Write-Off</fullName>
                 <default>false</default>
-                <label>Write-Off</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

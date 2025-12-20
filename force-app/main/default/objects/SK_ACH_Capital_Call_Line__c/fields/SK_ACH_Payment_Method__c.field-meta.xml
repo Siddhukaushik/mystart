@@ -13,22 +13,18 @@
             <value>
                 <fullName>Wire Transfer</fullName>
                 <default>true</default>
-                <label>Wire Transfer</label>
             </value>
             <value>
                 <fullName>ACH</fullName>
                 <default>false</default>
-                <label>ACH</label>
             </value>
             <value>
                 <fullName>Check</fullName>
                 <default>false</default>
-                <label>Check</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

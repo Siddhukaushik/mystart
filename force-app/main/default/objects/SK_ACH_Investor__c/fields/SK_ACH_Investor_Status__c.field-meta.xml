@@ -13,22 +13,18 @@
             <value>
                 <fullName>Prospect</fullName>
                 <default>true</default>
-                <label>Prospect</label>
             </value>
             <value>
                 <fullName>Active</fullName>
                 <default>false</default>
-                <label>Active</label>
             </value>
             <value>
                 <fullName>Inactive</fullName>
                 <default>false</default>
-                <label>Inactive</label>
             </value>
             <value>
                 <fullName>Restricted</fullName>
                 <default>false</default>
-                <label>Restricted</label>
             </value>
         </valueSetDefinition>
     </valueSet>

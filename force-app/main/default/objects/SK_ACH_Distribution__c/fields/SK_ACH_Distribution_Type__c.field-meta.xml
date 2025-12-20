@@ -13,27 +13,22 @@
             <value>
                 <fullName>Return of Capital</fullName>
                 <default>true</default>
-                <label>Return of Capital</label>
             </value>
             <value>
                 <fullName>Preferred Return</fullName>
                 <default>false</default>
-                <label>Preferred Return</label>
             </value>
             <value>
                 <fullName>Profit Distribution</fullName>
                 <default>false</default>
-                <label>Profit Distribution</label>
             </value>
             <value>
                 <fullName>Special Distribution</fullName>
                 <default>false</default>
-                <label>Special Distribution</label>
             </value>
             <value>
                 <fullName>Liquidating Distribution</fullName>
                 <default>false</default>
-                <label>Liquidating Distribution</label>
             </value>
         </valueSetDefinition>
     </valueSet>

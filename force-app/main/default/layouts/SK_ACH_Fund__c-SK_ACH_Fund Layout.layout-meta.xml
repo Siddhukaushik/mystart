@@ -54,6 +54,22 @@
                 <field>SK_ACH_Target_Fund_Size__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SK_ACH_Total_Commitments__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SK_ACH_Total_Called_Capital__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SK_ACH_Total_Unfunded__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SK_ACH_Deployment_Rate__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>SK_ACH_Management_Fee_Percent__c</field>
             </layoutItems>
@@ -68,16 +84,16 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SK_ACH_Fund_Term_Years__c</field>
+                <behavior>Readonly</behavior>
+                <field>SK_ACH_Total_Distributions__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>SK_ACH_Net_Cash_Flow__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>SK_ACH_Investment_Period_Start__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>SK_ACH_Investment_Period_End__c</field>
+                <field>SK_ACH_Fund_Domicile__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

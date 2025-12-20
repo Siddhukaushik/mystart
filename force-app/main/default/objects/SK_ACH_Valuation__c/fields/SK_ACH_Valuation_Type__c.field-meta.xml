@@ -13,27 +13,22 @@
             <value>
                 <fullName>Quarterly</fullName>
                 <default>true</default>
-                <label>Quarterly</label>
             </value>
             <value>
                 <fullName>Annual</fullName>
                 <default>false</default>
-                <label>Annual</label>
             </value>
             <value>
                 <fullName>Event-Driven</fullName>
                 <default>false</default>
-                <label>Event-Driven</label>
             </value>
             <value>
                 <fullName>Audit</fullName>
                 <default>false</default>
-                <label>Audit</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
-                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

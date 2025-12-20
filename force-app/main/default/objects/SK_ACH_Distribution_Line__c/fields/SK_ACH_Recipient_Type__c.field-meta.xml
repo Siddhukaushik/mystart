@@ -13,12 +13,10 @@
             <value>
                 <fullName>LP</fullName>
                 <default>true</default>
-                <label>LP</label>
             </value>
             <value>
                 <fullName>GP</fullName>
                 <default>false</default>
-                <label>GP</label>
             </value>
         </valueSetDefinition>
     </valueSet>

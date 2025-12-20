@@ -13,22 +13,18 @@
             <value>
                 <fullName>Accredited</fullName>
                 <default>true</default>
-                <label>Accredited</label>
             </value>
             <value>
                 <fullName>Qualified Purchaser</fullName>
                 <default>false</default>
-                <label>Qualified Purchaser</label>
             </value>
             <value>
                 <fullName>Institutional</fullName>
                 <default>false</default>
-                <label>Institutional</label>
             </value>
             <value>
                 <fullName>Not Accredited</fullName>
                 <default>false</default>
-                <label>Not Accredited</label>
             </value>
         </valueSetDefinition>
     </valueSet>
