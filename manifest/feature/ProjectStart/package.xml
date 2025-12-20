@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>SK_Apex_Capital_Hub</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>SK_ACH_Capital_Call_Line__c</members>
+        <members>SK_ACH_Capital_Call__c</members>
+        <members>SK_ACH_Commitment__c</members>
+        <members>SK_ACH_Distribution_Line__c</members>
+        <members>SK_ACH_Distribution__c</members>
+        <members>SK_ACH_Fund__c</members>
+        <members>SK_ACH_Investment__c</members>
+        <members>SK_ACH_Investor__c</members>
+        <members>SK_ACH_Valuation__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>SK_ACH_Capital_Call__c</members>
+        <members>SK_ACH_Commitment__c</members>
+        <members>SK_ACH_Distribution__c</members>
+        <members>SK_ACH_Fund__c</members>
+        <members>SK_ACH_Investment__c</members>
+        <members>SK_ACH_Investor__c</members>
+        <members>SK_ACH_Valuation__c</members>
+        <name>CustomTab</name>
+    </types>
+    <version>65.0</version>
+</Package>
