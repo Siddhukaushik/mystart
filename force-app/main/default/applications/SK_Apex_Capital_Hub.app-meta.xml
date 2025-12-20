@@ -10,9 +10,12 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Apex Capital Hub</label>
     <navType>Standard</navType>
-    <tabs>standard-Home</tabs>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
     <tabs>SK_ACH_Fund__c</tabs>
     <tabs>SK_ACH_Investor__c</tabs>
     <tabs>SK_ACH_Commitment__c</tabs>

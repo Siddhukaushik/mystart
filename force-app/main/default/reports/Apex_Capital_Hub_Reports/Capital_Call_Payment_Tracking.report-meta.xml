@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>SK_ACH_Capital_Call__c.SK_ACH_Total_Amount__c:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Total Called Amount</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Called Amount</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>SK_ACH_Capital_Call__c.SK_ACH_Total_Line_Paid__c:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Total Paid</description>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Paid</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>SK_ACH_Capital_Call__c.SK_ACH_Total_Outstanding__c:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Total Outstanding</description>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Total Outstanding</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SK_ACH_Capital_Call__c.SK_ACH_Call_Date__c</field>
+    </columns>
+    <columns>
+        <field>SK_ACH_Capital_Call__c.SK_ACH_Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>SK_ACH_Capital_Call__c.SK_ACH_Total_Amount__c</field>
+    </columns>
+    <columns>
+        <field>SK_ACH_Capital_Call__c.SK_ACH_Total_Line_Paid__c</field>
+    </columns>
+    <columns>
+        <field>SK_ACH_Capital_Call__c.SK_ACH_Payment_Completion__c</field>
+    </columns>
+    <columns>
+        <field>SK_ACH_Capital_Call__c.SK_ACH_Capital_Call_Status__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SK_ACH_Capital_Call__c.SK_ACH_Fund__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Capital Call Payment Tracking</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SK_ACH_Capital_Call__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Funds</fullName>
+    <columns>NAME</columns>
+    <columns>SK_ACH_Fund_Type__c</columns>
+    <columns>SK_ACH_Vintage_Year__c</columns>
+    <columns>SK_ACH_Total_Commitments__c</columns>
+    <columns>SK_ACH_Total_Called_Capital__c</columns>
+    <columns>SK_ACH_Deployment_Rate__c</columns>
+    <columns>SK_ACH_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SK_ACH_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Active Funds</label>
+</ListView>

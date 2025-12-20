@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Investors</fullName>
+    <columns>NAME</columns>
+    <columns>SK_ACH_Investor_Type__c</columns>
+    <columns>SK_ACH_Legal_Entity_Type__c</columns>
+    <columns>SK_ACH_Country__c</columns>
+    <columns>SK_ACH_Primary_Contact_Name__c</columns>
+    <columns>SK_ACH_Email__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SK_ACH_Investor_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Active Investors</label>
+</ListView>

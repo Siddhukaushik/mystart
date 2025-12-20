@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recent_Distributions</fullName>
+    <columns>NAME</columns>
+    <columns>SK_ACH_Fund__c</columns>
+    <columns>SK_ACH_Source_Investment__c</columns>
+    <columns>SK_ACH_Distribution_Date__c</columns>
+    <columns>SK_ACH_Distribution_Total_Amount__c</columns>
+    <columns>SK_ACH_Distribution_Type__c</columns>
+    <columns>SK_ACH_Distribution_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Recent Distributions</label>
+</ListView>

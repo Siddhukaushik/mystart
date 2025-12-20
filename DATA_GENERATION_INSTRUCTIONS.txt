@@ -1,0 +1,92 @@
+/**
+ * INSTRUCTIONS TO GENERATE 50,000+ TEST RECORDS
+ * ============================================
+ * 
+ * This will generate test data across all 9 Apex Capital Hub objects.
+ * The data generator creates realistic relationships between objects.
+ * 
+ * DATA VOLUME PER FUND:
+ * - 1 Fund
+ * - 10 Investors
+ * - 5 Commitments (linking Fund + Investors)
+ * - 3 Capital Calls
+ * - 15 Capital Call Lines (3 calls × 5 commitments)
+ * - 10 Investments
+ * - 20 Valuations (2 per investment)
+ * - 2 Distributions
+ * - 10 Distribution Lines (2 distributions × 5 commitments)
+ * 
+ * TOTAL PER FUND: 76 records
+ * For 1,000 Funds = 76,000 total records
+ * 
+ * EXECUTION OPTIONS:
+ * 
+ * Option 1: SMALL TEST (5 funds = ~380 records)
+ * ---------------------------------------------
+ * Open Developer Console > Debug > Open Execute Anonymous Window
+ * Paste and execute:
+ * 
+ *     ACHDataGenerator.generateTestData(5);
+ * 
+ * 
+ * Option 2: MEDIUM BATCH (100 funds = ~7,600 records)
+ * ---------------------------------------------------
+ * Open Developer Console > Debug > Open Execute Anonymous Window
+ * Paste and execute:
+ * 
+ *     Database.executeBatch(new ACHDataGeneratorBatch(100), 1);
+ * 
+ * Monitor: Setup > Apex Jobs
+ * 
+ * 
+ * Option 3: LARGE BATCH (1,000 funds = ~76,000 records)
+ * -----------------------------------------------------
+ * Open Developer Console > Debug > Open Execute Anonymous Window
+ * Paste and execute:
+ * 
+ *     Database.executeBatch(new ACHDataGeneratorBatch(1000), 1);
+ * 
+ * Monitor: Setup > Apex Jobs
+ * This will take 15-30 minutes to complete
+ * 
+ * 
+ * VERIFY DATA:
+ * -----------
+ * After execution, check record counts:
+ * - Funds: X records
+ * - Investors: X × 10 records
+ * - Commitments: X × 5 records
+ * - Capital Calls: X × 3 records
+ * - Capital Call Lines: X × 15 records
+ * - Investments: X × 10 records
+ * - Valuations: X × 20 records
+ * - Distributions: X × 2 records
+ * - Distribution Lines: X × 10 records
+ * 
+ * CALCULATED FIELDS:
+ * -----------------
+ * After data loads, triggers will automatically calculate:
+ * - Fund totals (commitments, called capital, distributions)
+ * - Commitment balances and cash flows
+ * - Capital Call payment status
+ * - Investment valuations and returns (MOIC)
+ * 
+ * CLEAN UP DATA:
+ * -------------
+ * To delete all test data, use Data Loader or execute:
+ * 
+ *     delete [SELECT Id FROM SK_ACH_Fund__c];
+ * 
+ * (This will cascade delete all related records due to lookups)
+ */
+
+// Quick start: Uncomment and run one of these lines in Execute Anonymous
+
+// Small test (5 funds, ~380 records):
+// ACHDataGenerator.generateTestData(5);
+
+// Medium batch (100 funds, ~7,600 records):
+// Database.executeBatch(new ACHDataGeneratorBatch(100), 1);
+
+// Large batch (1,000 funds, ~76,000 records):
+// Database.executeBatch(new ACHDataGeneratorBatch(1000), 1);
