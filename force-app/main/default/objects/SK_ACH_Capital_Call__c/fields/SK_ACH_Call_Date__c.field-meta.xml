@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_ACH_Call_Date__c</fullName>
+    <label>Call Date</label>
+    <description>Date capital call is issued</description>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+    <defaultValue>TODAY()</defaultValue>
+</CustomField>

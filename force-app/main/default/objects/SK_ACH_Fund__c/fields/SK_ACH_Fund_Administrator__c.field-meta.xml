@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_ACH_Fund_Administrator__c</fullName>
+    <label>Fund Administrator</label>
+    <description>Third-party administrator name</description>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <length>255</length>
+    <unique>false</unique>
+    <externalId>false</externalId>
+</CustomField>

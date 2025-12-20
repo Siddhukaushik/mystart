@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SK_ACH_Target_Fund_Size__c</fullName>
+    <label>Target Fund Size</label>
+    <description>Target capital to raise</description>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+    <precision>16</precision>
+    <scale>2</scale>
+</CustomField>
