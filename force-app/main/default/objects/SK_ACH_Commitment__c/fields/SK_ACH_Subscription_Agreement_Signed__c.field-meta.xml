@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Subscription_Agreement_Signed__c</fullName>
-    <label>Subscription Agreement Signed</label>
+    <defaultValue>false</defaultValue>
     <description>Whether subscription docs signed</description>
-    <required>false</required>
+    <label>Subscription Agreement Signed</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
-    <defaultValue>false</defaultValue>
 </CustomField>

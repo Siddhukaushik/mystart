@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Unrealized_Gain_Loss__c</fullName>
-    <label>Unrealized Gain/Loss</label>
     <description>Current Fair Value minus Total Invested (for active investments)</description>
-    <externalId>false</externalId>
-    <formula>IF(TEXT(SK_ACH_Investment_Status__c) = "Active", 
+    <formula>IF(TEXT(SK_ACH_Investment_Status__c) = &quot;Active&quot;, 
     SK_ACH_Current_Fair_Value__c - SK_ACH_Total_Invested__c, 
     0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Unrealized Gain/Loss</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Currency</type>
 </CustomField>

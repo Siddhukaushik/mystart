@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Accreditation_Status__c</fullName>
-    <label>Accreditation Status</label>
     <description>Investor accreditation</description>
+    <label>Accreditation Status</label>
     <required>true</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -13,18 +14,22 @@
             <value>
                 <fullName>Accredited</fullName>
                 <default>true</default>
+                <label>Accredited</label>
             </value>
             <value>
                 <fullName>Qualified Purchaser</fullName>
                 <default>false</default>
+                <label>Qualified Purchaser</label>
             </value>
             <value>
                 <fullName>Institutional</fullName>
                 <default>false</default>
+                <label>Institutional</label>
             </value>
             <value>
                 <fullName>Not Accredited</fullName>
                 <default>false</default>
+                <label>Not Accredited</label>
             </value>
         </valueSetDefinition>
     </valueSet>

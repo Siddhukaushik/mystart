@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Valuation_Date__c</fullName>
-    <label>Valuation Date</label>
+    <defaultValue>TODAY()</defaultValue>
     <description>As-of date for valuation</description>
+    <label>Valuation Date</label>
     <required>true</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Date</type>
-    <defaultValue>TODAY()</defaultValue>
 </CustomField>

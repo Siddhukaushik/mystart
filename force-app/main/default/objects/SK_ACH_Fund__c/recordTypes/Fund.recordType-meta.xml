@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fund</fullName>
+    <active>true</active>
+    <description>ACH Fund</description>
+    <label>Fund</label>
+    <picklistValues>
+        <picklist>SK_ACH_Fund_Domicile__c</picklist>
+        <values>
+            <fullName>Cayman Islands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delaware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ireland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luxembourg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SK_ACH_Fund_Type__c</picklist>
+        <values>
+            <fullName>Buyout</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fund of Funds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Growth Equity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venture Capital</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SK_ACH_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundraising</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Harvesting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

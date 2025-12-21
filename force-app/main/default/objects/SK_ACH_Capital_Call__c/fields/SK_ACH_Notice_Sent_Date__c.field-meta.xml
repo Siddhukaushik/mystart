@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Notice_Sent_Date__c</fullName>
-    <label>Notice Sent Date</label>
     <description>When notice was sent to investors</description>
+    <label>Notice Sent Date</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Date</type>
 </CustomField>

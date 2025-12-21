@@ -30,7 +30,6 @@
         <masterLabel>Total Distributions</masterLabel>
         <scale>2</scale>
     </aggregates>
-
     <columns>
         <field>CUST_NAME</field>
     </columns>
