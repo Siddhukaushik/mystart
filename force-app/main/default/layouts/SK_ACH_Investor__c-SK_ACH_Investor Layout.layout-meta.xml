@@ -11,7 +11,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>SK_ACH_Investor_Type__c</field>
             </layoutItems>
             <layoutItems>
@@ -19,13 +19,13 @@
                 <field>SK_ACH_Legal_Entity_Type__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>SK_ACH_Investor_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>SK_ACH_Country__c</field>
             </layoutItems>
             <layoutItems>
@@ -77,7 +77,7 @@
         <label>Compliance</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>SK_ACH_Accreditation_Status__c</field>
             </layoutItems>
             <layoutItems>
@@ -129,6 +129,13 @@
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
+    <layoutSections>
+        <customLabel>false</customLabel>
+        <detailHeading>false</detailHeading>
+        <editHeading>false</editHeading>
+        <layoutColumns/>
+        <style>CustomLinks</style>
+    </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
         <fields>SK_ACH_Fund__c</fields>
@@ -138,6 +145,8 @@
         <relatedList>SK_ACH_Commitment__c.SK_ACH_Investor__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
+    <showHighlightsPanel>false</showHighlightsPanel>
+    <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
 </Layout>

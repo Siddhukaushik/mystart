@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Capital_Call__c</fullName>
-    <label>Capital Call</label>
     <description>Parent Capital Call</description>
-    <trackTrending>false</trackTrending>
-    <type>MasterDetail</type>
+    <label>Capital Call</label>
     <referenceTo>SK_ACH_Capital_Call__c</referenceTo>
     <relationshipLabel>Capital Call Lines</relationshipLabel>
     <relationshipName>Capital_Call_Lines</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
     <writeRequiresMasterRead>false</writeRequiresMasterRead>
 </CustomField>

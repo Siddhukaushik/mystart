@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title="Convert Lead to Investor" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={lead.data}>
+                <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                    <div class="slds-col slds-size_1-of-2">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt class="slds-item_label slds-text-color_weak">Name:</dt>
+                            <dd class="slds-item_detail">{leadName}</dd>
+                            
+                            <dt class="slds-item_label slds-text-color_weak">Company:</dt>
+                            <dd class="slds-item_detail">{leadCompany}</dd>
+                        </dl>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <dt class="slds-item_label slds-text-color_weak">Email:</dt>
+                            <dd class="slds-item_detail">{leadEmail}</dd>
+                            
+                            <dt class="slds-item_label slds-text-color_weak">Phone:</dt>
+                            <dd class="slds-item_detail">{leadPhone}</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="slds-m-top_medium">
+                    <template if:false={isQualified}>
+                        <lightning-badge label={leadStatus} class="slds-m-right_small"></lightning-badge>
+                        <p class="slds-text-color_weak">Lead must be qualified before conversion</p>
+                    </template>
+                    
+                    <template if:true={isQualified}>
+                        <lightning-badge label="Qualified" class="slds-theme_success slds-m-bottom_small"></lightning-badge>
+                        <p class="slds-m-bottom_medium">This lead is ready to be converted to an Investor.</p>
+                        
+                        <lightning-button 
+                            label="Convert to Investor" 
+                            variant="brand"
+                            onclick={handleConvertClick}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Converting..." size="medium"></lightning-spinner>
+            </template>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <template if:true={showConfirmation}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 class="slds-text-heading_medium">Confirm Conversion</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <p>Are you sure you want to convert this Lead to an Investor?</p>
+                        <p class="slds-m-top_small">This will create a new SK_ACH_Investor__c record.</p>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Cancel" onclick={handleCancelConversion}></lightning-button>
+                        <lightning-button 
+                            label="Convert" 
+                            variant="brand" 
+                            onclick={handleConfirmConversion}>
+                        </lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </lightning-card>
+</template>

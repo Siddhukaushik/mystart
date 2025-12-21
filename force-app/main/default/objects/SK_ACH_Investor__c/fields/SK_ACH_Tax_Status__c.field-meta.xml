@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Tax_Status__c</fullName>
-    <label>Tax Status</label>
     <description>Tax classification</description>
+    <label>Tax Status</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -13,22 +14,27 @@
             <value>
                 <fullName>Tax-Exempt</fullName>
                 <default>false</default>
+                <label>Tax-Exempt</label>
             </value>
             <value>
                 <fullName>Taxable Domestic</fullName>
                 <default>false</default>
+                <label>Taxable Domestic</label>
             </value>
             <value>
                 <fullName>Taxable Foreign</fullName>
                 <default>false</default>
+                <label>Taxable Foreign</label>
             </value>
             <value>
                 <fullName>UBTI Subject</fullName>
                 <default>false</default>
+                <label>UBTI Subject</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
+                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

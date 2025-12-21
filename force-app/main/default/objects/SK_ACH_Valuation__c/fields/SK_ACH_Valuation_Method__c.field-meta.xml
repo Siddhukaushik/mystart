@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Valuation_Method__c</fullName>
-    <label>Valuation Method</label>
     <description>Methodology used</description>
+    <label>Valuation Method</label>
     <required>true</required>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -13,26 +14,32 @@
             <value>
                 <fullName>Market Comparable</fullName>
                 <default>true</default>
+                <label>Market Comparable</label>
             </value>
             <value>
                 <fullName>Discounted Cash Flow</fullName>
                 <default>false</default>
+                <label>Discounted Cash Flow</label>
             </value>
             <value>
                 <fullName>Recent Transaction</fullName>
                 <default>false</default>
+                <label>Recent Transaction</label>
             </value>
             <value>
                 <fullName>Cost Basis</fullName>
                 <default>false</default>
+                <label>Cost Basis</label>
             </value>
             <value>
                 <fullName>Liquidation Value</fullName>
                 <default>false</default>
+                <label>Liquidation Value</label>
             </value>
             <value>
                 <fullName>Other</fullName>
                 <default>false</default>
+                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>

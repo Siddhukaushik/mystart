@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Line_Preferred_Return__c</fullName>
-    <label>Preferred Return</label>
     <description>Portion that is preferred return</description>
+    <label>Preferred Return</label>
+    <precision>16</precision>
     <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Currency</type>
-    <precision>16</precision>
-    <scale>2</scale>
 </CustomField>

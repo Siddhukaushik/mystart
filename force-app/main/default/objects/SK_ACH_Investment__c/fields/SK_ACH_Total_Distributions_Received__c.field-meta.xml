@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SK_ACH_Total_Distributions_Received__c</fullName>
-    <label>Total Distributions Received</label>
     <description>Sum of distributions from this investment (calculated via trigger)</description>
-    <externalId>false</externalId>
+    <label>Total Distributions Received</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Currency</type>
 </CustomField>
